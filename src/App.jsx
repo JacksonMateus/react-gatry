@@ -1,39 +1,32 @@
-import { React, useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
+import { React } from 'react'
+import PromotionCard from './components/Promotion/Card'
+
 
 function App() {
-  const [count, setCount] = useState(0)
-  const [showimage, setShowimage] = useState(false)
+
+  const promotion = {
+    
+      "id": 1,
+      "title": "Kit Notebook Acer Aspire 3 + Mochila Green, A315-41-R790, AMD Ryzen 3 2200U Dual Core",
+      "price": 1799,
+      "imageUrl": "https://cdn.gatry.com/gatry-static/promocao/imagem/2631517face1861bc4f46ae154d387de.png",
+      "url": "https://www.amazon.com.br/Notebook-Acer-Mochila-A315-41-R790-Mem%C3%B3ria/dp/B07YDWLV7S/ref=as_li_ss_tl?ie=UTF8&linkCode=sl1&tag=gatry0b-20&linkId=e4a1146599e36741a720a6a952cbc328&language=pt_BR",
+      "comments": [
+        {
+          "id": 1,
+          "comment": "TELA HD"
+        }
+      ]
+    
+
+  }
 
   return (
     <div className="App">
-    
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount(count + 1)}>
-          count is {count}
-        </button>
-        <button onClick={()=> setShowimage(!showimage)}>
-          {showimage ?  'Esconder' : 'Mostrar'}
-        </button>
-        
-        {showimage && (
-            <div>
-            <a href="https://vitejs.dev" target="_blank">
-              <img src="/vite.svg" className="logo" alt="Vite logo" />
-            </a>
-            <a href="https://reactjs.org" target="_blank">
-              <img src={reactLogo} className="logo react" alt="React logo" />
-            </a>
-            <p className="read-the-docs">
-             Click on the Vite and React logos to learn more
-            </p>
-          </div>
-        )}
-      </div>    
+      <PromotionCard promotion={promotion} />
+  
     </div>
   )
 }
 
-export default App
+export default App;
