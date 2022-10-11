@@ -1,0 +1,10 @@
+{   
+  "scripts": {
+    "dev": "json-server --watch db.json  --delay=2000"
+    
+  },
+  "dependencies": {
+    "json-server": "^0.17.0"
+  }
+
+}
