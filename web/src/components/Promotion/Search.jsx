@@ -17,7 +17,7 @@ const PromotionSearch = () => {
         if (search) {
             params.title_like = search
         }
-        axios.get('http://localhost:3000/promotions?_embed=comments', { params })
+        axios.get('http://localhost:3000/promotions?_embed=comments&_order=desc&_sort=id', { params })
             .then(response => {
                 setPromotions(response.data)
             })
@@ -34,7 +34,6 @@ const PromotionSearch = () => {
             className="promotion-search__input" 
             type="search" 
             placeholder="Buscar"
-            value={search}
             onChange={(ev) => setSearch(ev.target.value)}
             />
            <PromotionList promotions = {promotions} loading={!promotions.length}/>
