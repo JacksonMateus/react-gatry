@@ -10,7 +10,7 @@ return (
         <Routes>
             <Route path="/" element={<PagesPromotionSearch/>}> </Route>
             <Route path="/create" element={<PagesPromotionForm/>}> </Route>
-
+            <Route path="/edit/:id" element={<PagesPromotionForm/>} ></Route>
         </Routes>
     </Router>
 

@@ -1,5 +1,6 @@
 import React from "react";
 import './Card.css'
+import { Link } from "react-router-dom";
 
 const PromotionCard = ({ promotion }) => (
     <div className="promotion-card">
@@ -13,6 +14,7 @@ const PromotionCard = ({ promotion }) => (
                 </div>
                 <a className="promotion-card__comments-link" href={promotion.url} target="_blanck" rel="noopener noreferrer"
                 >Ir para o site</a>
+                <Link to={`/edit/${promotion.id}`}>Editar</Link>
             </footer>
         </div>
     </div>
