@@ -27,9 +27,9 @@ const PromotionForm = ({ id }) => {
 
     function onChange(ev) {
         const { name, value } = ev.target;
-
-        // values[name] = value;
-        setValues({ ...values, [name]: value })
+        const newValues = {...values};
+        newValues[name] = value
+        setValues(newValues)
 
     }
 
