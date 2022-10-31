@@ -8,10 +8,9 @@ import PromotionList from "./List";
 
 
 const PromotionSearch = () => {
-    const [promotions, setPromotions] = useState([]);
     const [search, setSearch] = useState("");
     const [load, loadInfo] = useApi({
-        url:'http://localhost:3000/promotions',
+        url:'/promotions',
         method: 'get',
         params: {
             _embed:'comments',
@@ -19,12 +18,9 @@ const PromotionSearch = () => {
             _sort:'id',
             title_like: search || undefined,
         },
-        onCompleted: (response) =>{
-            setPromotions(response.data)
-        }
+        
     });
 
-    console.log(loadInfo.data)
 
     useEffect(() => {
         load()
@@ -42,7 +38,10 @@ const PromotionSearch = () => {
             placeholder="Buscar"
             onChange={(ev) => setSearch(ev.target.value)}
             />
-           <PromotionList promotions = {promotions} loading={!promotions.length}/>
+           <PromotionList 
+           promotions = {loadInfo.data} 
+           loading={loadInfo.loading}
+           error={loadInfo.error}/>
         </div>
     )
 }

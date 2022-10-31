@@ -12,17 +12,29 @@ const initialRequestInfo = {
 export default function useApi(config) {
     const[requestInfo, setRequestInfo] = useState(initialRequestInfo)
 
-    async function call () {
+    async function call (localConfig) {
         setRequestInfo({
             ...initialRequestInfo,
             loading: true,
         })
-        const response = await axios(config);
-         
-        setRequestInfo({
-            ...initialRequestInfo,
-            data: response.data,
-        })
+        let response = null;
+        try {
+             response = await axios({
+                baseURL: 'http://localhost:3000',
+                ...config,
+                ...localConfig,
+             });
+            setRequestInfo({
+                ...initialRequestInfo,
+                data: response.data,
+            })
+        } catch(error) {
+            setRequestInfo({
+                ...initialRequestInfo,
+                error,
+            })
+        } 
+              
         if (config.onCompleted) {
             config.onCompleted(response)
         }

@@ -1,6 +1,6 @@
 {   
   "scripts": {
-    "dev": "json-server --watch db.json"
+    "dev": "json-server --watch db.json --delay=1000"
     
   },
   "dependencies": {
