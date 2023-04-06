@@ -77,8 +77,23 @@
     {
       "userId": 1,
       "promotionId": 2,
-      "comment": "lucas é homem",
+      "comment": "Test",
+      "parentId": 3,
       "id": 6
+    },
+    {
+      "userId": 1,
+      "promotionId": 2,
+      "comment": "sub test",
+      "parentId": 6,
+      "id": 7
+    },
+    {
+      "userId": 1,
+      "promotionId": 2,
+      "comment": "respondendo o joe",
+      "parentId": 2,
+      "id": 8
     }
   ],
   "users": [
