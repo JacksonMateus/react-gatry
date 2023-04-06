@@ -17,6 +17,9 @@ body {
   margin: 0;
 
 }
+.no-scroll {
+  overflow: hidden;
+}
 
 h1 {
   font-size: 3.2em;

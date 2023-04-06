@@ -24,6 +24,10 @@ const PromotionModal = ({ promotionId, onClickClose }) => {
 
     useEffect(() => {
         load()
+        document.body.classList.add('no-scroll');
+        return () => {
+            document.body.classList.remove('no-scroll');
+        };
     }, [])
 
     async function onSubmit(ev) {

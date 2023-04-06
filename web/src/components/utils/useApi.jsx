@@ -32,10 +32,17 @@ export default function useApi(config) {
 
         try {
             response = await fn(finalConfig);
-            setRequestInfo({
+
+            const newRequestInfo = {
                 ...initialRequestInfo,
                 data: response.data,
-            })
+            }
+            
+            if (response.headers['x-total-count'] !== undefined) {
+                newRequestInfo.total = Number.parseInt(response.headers['x-total-count'], 10)
+            }
+
+            setRequestInfo(newRequestInfo)
         } catch(error) {
             setRequestInfo({
                 ...initialRequestInfo,
