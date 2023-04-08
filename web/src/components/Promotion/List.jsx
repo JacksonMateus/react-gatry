@@ -17,6 +17,7 @@ const PromotionList = ({ loading, error, promotions }) => {
 
 
     return (
+
         <div className="promotion-list">
             {promotions.map((promotion) => (
                 <PromotionCard 

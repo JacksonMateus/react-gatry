@@ -32,10 +32,13 @@ export default function useApi(config) {
 
         try {
             response = await fn(finalConfig);
+
             setRequestInfo({
                 ...initialRequestInfo,
                 data: response.data,
+
             })
+            
         } catch(error) {
             setRequestInfo({
                 ...initialRequestInfo,
@@ -51,7 +54,6 @@ export default function useApi(config) {
 
     return [
         call,
-        requestInfo
-    
+        requestInfo   
     ]
 }

@@ -5,6 +5,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import "./Search.css"
 import PromotionList from "./List";
+import UIInfiniteScroll from "../UI/InfiniteScroll";
 
 const PromotionSearch = () => {
     const mountRef = useRef(null)
@@ -48,7 +49,8 @@ const PromotionSearch = () => {
            <PromotionList 
            promotions = {loadInfo.data} 
            loading={loadInfo.loading}
-           error={loadInfo.error}/>
+           error={loadInfo.error}
+           />
         </div>
     )
 }
