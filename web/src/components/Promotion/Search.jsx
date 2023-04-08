@@ -18,7 +18,6 @@ const PromotionSearch = () => {
             _embed:'comments',
             _order:'desc',
             _sort:'id',
-            _page: 1,
             title_like: search || undefined,
         },
         
@@ -52,9 +51,6 @@ const PromotionSearch = () => {
            loading={loadInfo.loading}
            error={loadInfo.error}
            />
-           {loadInfo.data && (
-                <UIInfiniteScroll fetchMore={() => console.log('Apareceu na tela')} />
-            )}
         </div>
     )
 }
