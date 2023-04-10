@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import useApi from "../utils/useApi";
+import UIButton from "../UI/Button";
 
 
 const initialValue = {
@@ -80,7 +81,7 @@ const PromotionForm = ({ id }) => {
             </div>
 
             <div>
-                <button type="submit" > Salvar </button>
+                <UIButton component="button" type="submit" > Salvar </UIButton>
             </div>
         </form>
        )}

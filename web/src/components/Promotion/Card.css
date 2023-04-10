@@ -58,21 +58,7 @@
 
 }
 
-.promotion-card__link {
-    border: 1px solid aqua;
-    border-radius: 4px;
-    color: #3498DB;
-    text-decoration: none;
-    padding: 7px 10px;
-    white-space: nowrap;
-
-}
 
 .promotion-card__edit-button {
-    border: 1px solid aqua;
-    border-radius: 4px;
-    color: #3498DB;
-    text-decoration: none;
-    padding: 7px 10px;
     margin-left: 10px;
 }

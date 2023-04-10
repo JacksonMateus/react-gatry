@@ -1,11 +1,11 @@
 import React, { useRef } from "react";
-import useApi from "../utils/useApi";
 import { useEffect } from "react";
 import { useState } from "react";
+import useApi from "../utils/useApi";
 import { Link } from "react-router-dom";
 import "./Search.css"
 import PromotionList from "./List";
-import UIInfiniteScroll from "../UI/InfiniteScroll";
+import UIButton from "../UI/Button";
 
 const PromotionSearch = () => {
     const mountRef = useRef(null)
@@ -38,7 +38,9 @@ const PromotionSearch = () => {
         <div className="promotion-search">
             <header className="promotion-search__header">
                 <h1> Promo Show</h1>
-                <Link to="/create">Nova Promoção</Link>
+                <UIButton component={Link} to="/create" theme="contained-green">
+                    Nova Promoção
+                </UIButton>
             </header>
             <input 
             className="promotion-search__input" 
