@@ -5,6 +5,7 @@
     display: flex;
     padding: 20px;
     align-items: center;
+    position: relative;
 }
 
 .promotion-card__image {
@@ -61,4 +62,13 @@
 
 .promotion-card__edit-button {
     margin-left: 10px;
+}
+
+.promotion-card__delete-button {
+    border: unset;
+    background-color: unset;
+    font-size: 18px;
+    position: absolute;
+    top: 8px;
+    right: 8px;
 }

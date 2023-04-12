@@ -29,6 +29,9 @@ const PromotionCard = ({ promotion, onClickComments }) => (
                 >
                     Editar
                 </UIButton>
+                <button type="button" className="promotion-card__delete-button">
+                    X
+                </button>
             </footer>
         </div>
     </div>
