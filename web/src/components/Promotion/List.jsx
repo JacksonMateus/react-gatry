@@ -1,10 +1,15 @@
 import React, {useState} from "react";
 import PromotionCard from "./Card";
 import PromotionModal from "./Modal";
+import useApi from "../utils/useApi";
 import './List.css';
 
 const PromotionList = ({ loading, error, promotions }) => {
     const [promotionId, setPromotionId] = useState(null)
+    const [deletePromotion, deletePromotionInfo] = useApi({
+        method: 'DELETE',
+    })
+
     if (error) {
         return <div>Algo de errado, não está certo</div>
     }
@@ -22,7 +27,12 @@ const PromotionList = ({ loading, error, promotions }) => {
             {promotions.map((promotion) => (
                 <PromotionCard 
                 promotion={promotion} 
-                onClickComments = {() => setPromotionId(promotion.id)} 
+                onClickComments = {() => setPromotionId(promotion.id)}
+                onClickDelete={() => {
+                    deletePromotion({
+                        url: `/promotions/${promotion.id}`
+                    })
+                }} 
                 />
              ))}
             {promotionId && (
