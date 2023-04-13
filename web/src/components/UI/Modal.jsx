@@ -12,7 +12,7 @@ const UIModal = ({ children, isOpen, onClickClose }) => {
     return ReactDOM.createPortal(
         <div className="ui-modal__overlay">
             <div className="ui-modal"> 
-                <button type="button" className="ui-modal__close-button" onClick={onClickClose}>X</button>
+                <button type="button" className="ui-modal__close-button" onClick={onClickClose}>Fechar Comentários</button>
                 {children}
             </div>
 

@@ -7,6 +7,12 @@ import "./Search.css"
 import PromotionList from "./List";
 import UIButton from "../UI/Button";
 
+const baseParams = {
+    _embed:'comments',
+    _order:'desc',
+    _sort:'id',
+}
+
 const PromotionSearch = () => {
     const mountRef = useRef(null)
     const [search, setSearch] = useState("");
@@ -15,9 +21,7 @@ const PromotionSearch = () => {
         url:'/promotions',
         method: 'get',
         params: {
-            _embed:'comments',
-            _order:'desc',
-            _sort:'id',
+            ...baseParams,
             title_like: search || undefined,
         },
         
@@ -48,10 +52,15 @@ const PromotionSearch = () => {
             placeholder="Buscar"
             onChange={(ev) => setSearch(ev.target.value)}
             />
-           <PromotionList 
-           promotions = {loadInfo.data} 
-           loading={loadInfo.loading}
-           error={loadInfo.error}
+            <PromotionList 
+                promotions = {loadInfo.data} 
+                loading={loadInfo.loading}
+                error={loadInfo.error}
+                refetch={() =>  {
+                    load({
+                        params: baseParams,
+                    })
+                 }}
            />
         </div>
     )
