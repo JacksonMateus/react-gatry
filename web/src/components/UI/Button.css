@@ -17,3 +17,7 @@
     border: 1px solid #2ecc71;
 
 }
+
+.ui-button--contained-green:hover {
+    color: #ffffff;
+  }

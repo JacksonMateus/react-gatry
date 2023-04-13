@@ -56,7 +56,7 @@
     background-color: unset;
     border: unset;
     white-space: nowrap;
-
+    cursor: pointer;
 }
 
 
@@ -72,3 +72,7 @@
     top: 8px;
     right: 8px;
 }
+
+.promotion-card__delete-button:active {
+    outline: 2px solid black; /* adiciona um contorno preto de 2px ao redor do botão quando clicado */
+  }

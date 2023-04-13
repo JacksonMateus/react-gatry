@@ -34,7 +34,7 @@ const PromotionCard = ({ promotion, onClickComments, onClickDelete }) => (
             <button 
                 type="button" 
                 className="promotion-card__delete-button"
-                onClickDelete={onClickDelete}   
+                onClick={onClickDelete} 
             >
                 <BiTrash />
             </button>

@@ -26,4 +26,6 @@
     float: right;
     background: unset;
     border: unset;
+    cursor: pointer;
 }
+
